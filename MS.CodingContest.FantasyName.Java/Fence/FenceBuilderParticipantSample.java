@@ -21,6 +21,20 @@ public class FenceBuilderParticipantSample implements IFenceBuilderParticipant
     }
 
     @Override
+    public double Encircle(int[] treesRowColumns)
+    {
+        int treeCount = treesRowColumns.length / 2;
+        Array<Point> trees = new Array<Integer>();
+
+        for(int treeIdx = 0; treeIdx < treeCount; ++treeIdx)
+        {
+            trees.add(new Point(treesRowColumns[2*treeIdx], treesRowColumns[2*treeIdx+1]));
+        }
+
+        return Encircle(trees.toArray());
+    }
+
+    @Override
     public int[] ShowSolution()
     {
         Array<Integer> indexesOuterTrees = new Array<Integer>();
